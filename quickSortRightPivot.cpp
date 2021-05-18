@@ -19,8 +19,8 @@ void display(int A[N], int size)
 
 int partition(int A[N], int n, int left, int right, int pivot) 
 {
-   int low = left+1;
-   int high = right;
+   int low = left;
+   int high = right - 1;
 
    while(true) 
    {
@@ -39,11 +39,11 @@ int partition(int A[N], int n, int left, int right, int pivot)
         else 
             swap(A[low], A[high]);
    }
-   swap(A[high], A[left]);
+   swap(A[low], A[right]);
    cout << "\n Pivot Element : " << pivot;
    cout << "\n Updated Array : "; 
    display(A, n);
-   return high;
+   return low;
 }
 
 void quickSort(int A[N], int n, int left, int right) 
@@ -52,7 +52,7 @@ void quickSort(int A[N], int n, int left, int right)
       return;   
    else 
    {
-      int pivot = A[left];
+      int pivot = A[right];
       int cross = partition(A, n, left, right, pivot);
       quickSort(A, n, left, cross-1);
       quickSort(A, n, cross+1, right);
