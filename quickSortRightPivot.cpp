@@ -25,14 +25,10 @@ int partition(int A[N], int n, int left, int right, int pivot)
    while(true) 
    {
         while(A[low] < pivot)  // 1 5 7 2 6
-        {
             low++;
-        }
         
         while(high > 0 && A[high] > pivot) 
-        {
             high--;
-        }
 
         if(low >= high)
             break;
