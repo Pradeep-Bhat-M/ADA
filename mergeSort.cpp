@@ -56,11 +56,11 @@ int main()
 
     cout << "\n Enter No. Of Elements : ";
     cin >> n;
-    //cout << "\n Enter Array Elements to SORT : ";
+    // cout << "\n Enter Array Elements to SORT : ";
     for(int i = 0; i < n; i++)
         A[i] = rand() % 100000;
 
-    //pivot = A[0];
+    // pivot = A[0];
     stime = clock();
     mergeSort(A, n, 0, n-1); 
     etime = clock();
@@ -73,7 +73,7 @@ int main()
         cout << "\n Array is sorted, but printing it won't make any difference.";
 
     cout << "\n Time taken to sort "<< n <<" elements is "<< difftime(etime, stime);
-    //cout << "\n Number of steps taken to sort "<< n <<" elements is "<< count;
+    // cout << "\n Number of steps taken to sort "<< n <<" elements is "<< count;
 
     return 0; 
 }
