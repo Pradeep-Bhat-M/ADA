@@ -28,14 +28,14 @@ int minKey(int key[], bool set[])
 
 int printMST(int parent[], int graph[V][V])
 {
-    int sum;
+    int sum = 0;;
     printf("Edge \tWeight\n");
     for (int i = 1; i < V; i++)
     {
         printf("%d - %d \t%d \n", parent[i], i, graph[i][parent[i]]);
         sum = sum + graph[i][parent[i]];
     }
-        
+    printf("\n Weight of MST = %d", sum);
 }
 
 void prim(int graph[V][V]) {
