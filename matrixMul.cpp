@@ -29,15 +29,24 @@ void printMatrix(int matrix[][N], int n)
     } 
 }
 
+void fillMatrix(int a[][N], int n)
+{
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            a[i][j] = rand()%10;
+}
+
 int main()
 {
-    cout << "\n Matrix Multiplication";
-    int n = 2;
-    int a[][N] = {{1, 2}, {3, 1}};
-    int b[][N] = {{5, 6}, {7, 8}};
+    int n;
+    cout << "\n Enter the size for Matrices : ";
+    cin >> n;
+    int a[N][N], b[N][N];
     int res[N][N];
+
+    fillMatrix(a, n);
+    fillMatrix(b, n);    
     matrixMul(a, b, res, n);
     printMatrix(res, n);
-    
     return 0;
 }
