@@ -43,7 +43,8 @@ void prim(int graph[V][V]) {
     int key[V];
     bool set[V];
 
-    for(int i = 0; i < V; i++) {
+    for(int i = 0; i < V; i++)
+    {
         key[i] = INT_MAX;
         set[i] = false;
     }
@@ -51,15 +52,17 @@ void prim(int graph[V][V]) {
     key[0] = 0;
     parent[0] = -1;
 
-    for(int count = 0; count < V - 1; count++) {
-
+    for(int count = 0; count < V - 1; count++) 
+    {
         int u = minKey(key, set);
 
         set[u] = true;
 
-        for (int v = 0; v < V; v++) { 
+        for (int v = 0; v < V; v++) 
+        { 
 
-        if (graph[u][v] && set[v] == false && graph[u][v] < key[v]) { 
+            if(graph[u][v] && set[v] == false && graph[u][v] < key[v]) 
+            { 
                 parent[v] = u;
                 key[v] = graph[u][v];
             }
@@ -68,7 +71,8 @@ void prim(int graph[V][V]) {
     printMST(parent, graph);
 }
 
-int main() {
+int main() 
+{
     printf("Enter the vertices in the graph : ");
     scanf("%d",&V);
     int graph[V][V];
