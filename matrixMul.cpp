@@ -10,12 +10,9 @@ void matrixMul(int a[][N], int b[][N], int result[][N], int n)
         {  
             result[i][k] = 0;
             for (int j = 0; j < n; j++)
-            {
                 result[i][k] += a[i][j] * b[j][k];
-            }
         }
     } 
-    //return result;
 }
 
 void printMatrix(int matrix[][N], int n)
@@ -39,7 +36,7 @@ void fillMatrix(int a[][N], int n)
 int main()
 {
     int n;
-    cout << "\n Enter the size for Matrices : ";
+    cout << "\n Enter the size for Matrices(less than 64) : ";
     cin >> n;
     int a[N][N], b[N][N];
     int res[N][N];
