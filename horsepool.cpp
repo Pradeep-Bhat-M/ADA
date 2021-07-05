@@ -25,34 +25,42 @@ int match(string text, string pattern)
     return -1;
 }
 
-void openFile(string text, string fileName)
+void openFile(string fileName, char T[])
 {
-    int i = 0;
-    char ch;
-    ifstream file;
-    file.open(fileName);
-    while( !file.eof())
+    int i, g = 0;
+    int MAX=300;
+    char buffer[MAX];
+    ifstream infile(fileName);
+    while( !infile.eof())
     {
-        file >> ch;
-        cout << ch;
-        text[i++] = ch;
+        infile.getline(buffer,MAX);
+        //cout<<buffer<<"="<<strlen(buffer)<<endl;
+        
+        i=0;
+        while(i<strlen(buffer))
+        {
+            T[g++]=buffer[i];
+            i++;
+        }
+        T[g++]='\n';
     }
-    file.close();
 }
 
 int main()
 {
-    string text;
     string fileName, pattern;
     cout << "\n Enter text file : ";
     getline(cin, fileName);
-    openFile(text, fileName);
+    //fileName = "text.txt";
+    char text[100000];
+    openFile(fileName, text);
+    cout <<" \n Text in File : " << text;
     cout << "\n Enter the pattern to find : ";
     getline(cin, pattern);
     int result = match(text, pattern);
     if(result >= 0)
-        cout << "\n Patter found at index " << result;
+        cout << "\n Pattern found at index " << result;
     else
-        cout << "\n Patter Not found";
+        cout << "\n Pattern Not found";
     return 0;
 }
