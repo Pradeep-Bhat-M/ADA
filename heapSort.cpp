@@ -22,8 +22,8 @@ void heapify(int arr[], int n, int i)
         swap(arr[i], arr[max]);
         heapify(arr, n, max); 
     }
-  }
-  
+}
+
 void heapSort(int arr[], int n) 
 {
     for (int i = n / 2 - 1; i >= 0; i--)
@@ -35,6 +35,39 @@ void heapSort(int arr[], int n)
         swap(arr[0], arr[i]);
         heapify(arr, i, 0);
     }
+}
+
+void minHeapify(int arr[], int n, int i) 
+{
+    int min = i;
+    int leftChild = 2 * i + 1;
+    int rightChild = 2 * i + 2;
+  
+    if (leftChild < n && arr[leftChild] < arr[min])
+      min = leftChild;
+  
+    if (rightChild < n && arr[rightChild] < arr[min])
+      min = rightChild;
+  
+    if (min != i) 
+    {
+        ::count++;
+        swap(arr[i], arr[min]);
+        minHeapify(arr, n, min); 
+    }
+  }
+
+  
+void minHeapSort(int arr[], int n) 
+{
+    for (int i = (n / 2) - 1; i >= 0; i--)
+        minHeapify(arr, n, i);
+
+    for (int i = n - 1; i >= 0; i--) 
+    {
+		  swap(arr[0], arr[i]);
+		  minHeapify(arr, i, 0);
+	  }
 }
   
 void display(int arr[], int n) 
@@ -60,10 +93,10 @@ int main()
 
     //pivot = A[0];
     //stime = clock();
-    heapSort(A, n); 
+    minHeapSort(A, n); 
     //etime = clock();
     cout << " Sorted Array :"; 
-    //display(A, n); 
+    display(A, n); 
     //cout << "\n Time taken to sort "<< n <<" elements is "<< difftime(etime, stime);
     cout << "\n Number of steps taken to sort "<< n <<" elements is "<< ::count;
 

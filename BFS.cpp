@@ -68,9 +68,15 @@ int main()
     for(i = 1; i <= n; i++)
     {
       for(j = 1; j <= n; j++)
-        cin >> adj[i][j];
+      {
+          if(i == j)
+            adj[i][j] = 0;
+          else  
+            adj[i][j] = 1;
+      }
     }
-    cout << "\n Enter the vertex no. to start with  : \n";
+
+    cout << "\n Enter the vertex no. to start with  : ";
     cin >> v;
     cout << "\n Reachability of vertex " << v << " : ";
     for(i = 1; i <= n; i++)

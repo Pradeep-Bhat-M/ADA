@@ -40,9 +40,9 @@ int partition(int A[N], int n, int left, int right, int pivot)
             swap(A[low], A[high]);
    }
    swap(A[high], A[left]);
-   cout << "\n Pivot Element : " << pivot;
-   cout << "\n Updated Array : "; 
-   display(A, n);
+   //cout << "\n Pivot Element : " << pivot;
+   //cout << "\n Updated Array : "; 
+   //display(A, n);
    return high;
 }
 
@@ -67,8 +67,12 @@ int main()
     cout << "\n Enter No. Of Elements : ";
     cin >> n;
     //cout << "\n Enter Array Elements to SORT : ";
+    // for(int i = 0; i < n; i++)
+    //     cin >> A[i];
     for(int i = 0; i < n; i++)
-        cin >> A[i];
+    {
+        A[i] = rand()%n;
+    }
 
     //pivot = A[0];
     //stime = clock();

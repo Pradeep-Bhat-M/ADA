@@ -10,7 +10,7 @@ void display(int A[N], int size)
     cout << "\n"; 
 }
 
-void merge(int a[N], int n, int left, int mid, int right)
+void merge(int a[], int left, int mid, int right)
 {
     int i, j, k, temp[right - left + 1];
     i = left;
@@ -44,7 +44,7 @@ void mergeSort(int a[N], int n, int left, int right)
     mergeSort(a, n, left, mid);
     mergeSort(a, n, mid+1, right);
 
-    merge(a, n, left, mid, right);
+    merge(a, left, mid, right);
 }
 
 

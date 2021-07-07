@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <cmath>
 #define N 100
-
+long int count = 0, sol = 0;
 using namespace std;
 
 void printBoard(int a[N], int n)
@@ -26,6 +26,7 @@ bool validMoveChecker(int a[N], int k, int i)
 {
     for (int j = 1; j <= k - 1; j++)
     {
+        count++;
         if (a[j] == i || (std::abs(a[j] - i) == std::abs(j - k)))
            return false;
     }
@@ -40,7 +41,8 @@ void nQueen(int a[N], int k, int n)
         {
             a[k] = i;
             if (k == n)
-                printBoard(a, n);
+                //printBoard(a, n);
+                sol++;
             else
                 nQueen(a, k + 1, n);
         }
@@ -55,5 +57,7 @@ int main()
     // n = 4;   
     cout << "-------------------------------------------\n";
     nQueen(a, 1, n);   
+    cout<<"\n Count = "<<count << "\n";
+    cout<< "\n No. of possible solutions = " << sol;
     return 0;
 }

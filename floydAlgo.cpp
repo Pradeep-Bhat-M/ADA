@@ -9,7 +9,7 @@ void flyod(int **A, int n, int **C)
         {
             for(int j = 0; j < n; j++)
                 if(A[i][k] != INT_MAX && A[k][j] != INT_MAX)
-                    C[i][j] = A[i][j] < (A[i][k] + A[k][j]) ? A[i][j] : (A[i][k] + A[k][j]);
+                    A[i][j] = A[i][j] < (A[i][k] + A[k][j]) ? A[i][j] : (A[i][k] + A[k][j]);
         }
     }
 
@@ -21,7 +21,10 @@ void print(int **A, int n)
     {
         for(int j = 0; j < n; j++)
         {
-            std::cout << " " << A[i][j];
+            if(A[i][j] == INT_MAX)
+                std::cout << " INF";
+            else
+                std::cout << " " << A[i][j];
         }
         std::cout<<"\n";
     }
@@ -59,7 +62,7 @@ int main()
     flyod(A, n, C);
     // end=clock();
     std::cout << "\n Shortest distance b/w each pair of vertices : \n\n";
-    print(C, n);
+    print(A, n);
 
 
     // double time_taken=(double)(end-start)/CLOCKS_PER_SEC;

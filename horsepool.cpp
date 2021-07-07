@@ -3,6 +3,7 @@ using namespace std;
 
 int match(string text, string pattern)
 {
+    int count = 0;
     int i, k, p_size = pattern.length();
     int table[126];
     for(i = 0; i < 126; i++)        // world full of hello   
@@ -13,22 +14,29 @@ int match(string text, string pattern)
     i = p_size - 1;
     while(i <= text.length()-1)
     {
+        count++;
         k = 0;
         while(k <= p_size-1 && pattern[p_size-1-k] == text[i-k])
+        {
             k++;
-
+            count++;
+        }
         if(k == p_size)
+        {
+            cout << "\n Count = " << count;
             return (i - p_size + 1);
+        }
         else
             i = i + table[text[i]];
     }
+    cout << "\n Count = " << count;
     return -1;
 }
 
 void openFile(string fileName, char T[])
 {
     int i, g = 0;
-    int MAX=300;
+    int MAX=30000;
     char buffer[MAX];
     ifstream infile(fileName);
     while( !infile.eof())
@@ -51,7 +59,7 @@ int main()
     string fileName, pattern;
     cout << "\n Enter text file : ";
     getline(cin, fileName);
-    //fileName = "text.txt";
+    fileName = "text.txt";
     char text[100000];
     openFile(fileName, text);
     cout <<" \n Text in File : " << text;
