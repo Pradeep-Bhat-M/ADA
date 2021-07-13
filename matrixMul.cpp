@@ -1,7 +1,5 @@
 #include <iostream>
 
-
-
 void matrixMul(int **a, int **b, int **result, int row, int common, int col)
 {
     for(int i = 0; i < row; i++)
@@ -44,16 +42,41 @@ int main()
     //sts::cin >> r2;
     std::cin >> c2;
      
-    int **res;
-
     int** a = new int* [r1];
+    for(int i = 0; i < r1; i++)
+        a[i] = new int[c1];
+    
     int** b = new int* [c1];
+    for(int i = 0; i < c1; i++)
+        b[i] = new int[c2];
 
     
 
+   // std::cout << "Check";
     fillMatrix(a, r1, c1);
-    fillMatrix(b, r2, c2);    
+    printMatrix(a, r1, c1);
+    fillMatrix(b, c1, c2);   
+    //std::cout << "Check";
+    printMatrix(b, c1, c2); 
+
+    int** res = new int* [r1];
+    for(int i = 0; i < r1; i++)
+        res[i] = new int[c2];
+
     matrixMul(a, b, res, r1, c1, c2);
     printMatrix(res, r1, c2);
+
+    for(int i = 0; i < r1; i++)
+        delete []a[i];
+    delete []a;
+
+    for(int i = 0; i < c1; i++)
+        delete []b[i];
+    delete []b;
+
+    for(int i = 0; i < r1; i++)
+        delete []res[i];
+    delete []res;
+
     return 0;
 }

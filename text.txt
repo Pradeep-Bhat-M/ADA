@@ -6,3 +6,36 @@ Since July 2009, Israeli broadcast monitoring service Media Forest has been publ
 Media Forest also releases year end charts in regards to the radio airplay, listing the most broadcast songs of Romanian origin of the respective year, weighted by the official audience numbers provided by Asociatia pentru Radio Audienta (Romanian Association for Audience Numbers). During the 2010s, around 100 singles each were listed by Media Forest as the most broadcast tracks on radio and television respectively. The first were "I Gotta Feeling" by the Black Eyed Peas (radio) and "Chica Bomb" by Dan Balan (television).
 "Shoulda" by Jamie Woon spent an unprecedented 20 weeks as the most broadcast single on radio stations, while in terms of television airplay, this feat was achieved by "Luna" by Carla's Dreams with a total of 15 weeks. Carla's Dreams and Smiley had eight songs listed as the most-broadcast on radio and television during the 2010s, more than any other act. "Dance Monkey" by Tones and I was the final top song of the 2010s on both listings. In terms of radio airplay, reports by Media Forest indicate that Cat Music was the most successful label of 2017; Global Records claimed that accolade in 2018 and 2019. Kiss FM, Pro FM and Virgin Radio Romania were the trendsetting radio stations in those years respectively, meaning they broadcast Media Forest's top weekly radio songs the most. 
 WAAR
+
+Me: Hello Copilot
+Copilot: Hello Me
+Me: I'm a student at the University of Romanian. I'm here to apply for a job.
+Copilot: I'm here to help you.
+pradeep: Do u like programming
+Copilot: I like programming
+pradeep: How is your day?
+Copilot: Good.
+pradeep: What is your name?
+Copilot: My name is Copilot.
+pradeep: What is your age?
+Copilot: I'm 28.
+pradeep: What is your father's name?
+Copilot: My father's name is Pradeep.
+pradeep: What is your mother's name?
+Copilot: My mother's name is Kaili.
+pradeep: What is your highest degree?
+Copilot: My highest degree is Computer Science.
+pradeep: What is your current job?
+Copilot: My current job is a Software Developer.
+pradeep: What is your current company?
+Copilot: My current company is a github.
+pradeep: What is your current salary?
+Copilot: My current salary is $1000.
+pradeep: What is your current job description?
+Copilot: My current job description is to develop software.
+pradeep: What is your current location?
+Copilot: My current location is Romania.
+pradeep: What is your current language?
+Copilot: My current language is English.
+pradeep: What is your current
+Copilot: My current
